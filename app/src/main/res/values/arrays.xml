@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="homeApp">
+        <item>智慧课堂</item>
+        <item>导学本</item>
+        <item>我的作业</item>
+        <item>作业辅导</item>
+        <item>错题集</item>
+        <item>课程资源</item>
+        <item>我的文件</item>
+        <item>我的相机</item>
+    </array>
+    <array name="homeAppBackground">
+        <item>#F19049</item>
+        <item>#2894DD</item>
+        <item>#32B06D</item>
+        <item>#2675DB</item>
+        <item>#2675DB</item>
+        <item>#2894DD</item>
+        <item>#F19049</item>
+        <item>#AD5DA1</item>
+    </array>
+    <array name="homeAppIcon">
+        <item>@drawable/icon_home_app_course</item>
+        <item>@drawable/icon_home_app_daoxueben</item>
+        <item>@drawable/icon_home_app_wodezuoye</item>
+        <item>@drawable/icon_home_app_zuoyefudao</item>
+        <item>@drawable/icon_home_app_cuotiji</item>
+        <item>@drawable/icon_home_app_kechengziyuan</item>
+        <item>@drawable/icon_home_app_files</item>
+        <item>@drawable/icon_home_app_camera</item>
+    </array>
+</resources>

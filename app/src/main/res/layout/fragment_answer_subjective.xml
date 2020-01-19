@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/llSubjectiveOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/rdbAnswerPaint"
+            style="@style/answerSubjective"
+            android:text="手写笔" />
+
+        <Button
+            android:id="@+id/rdbAnswerText"
+            style="@style/answerSubjective"
+            android:padding="10dp"
+            android:text="输入法" />
+
+
+        <Button
+            android:id="@+id/rdbAnswerTakePhoto"
+            style="@style/answerSubjective"
+            android:padding="10dp"
+            android:text="拍照" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="46dp" />
+
+        <Button
+            android:id="@+id/btnPrevious"
+            style="@style/answerSubjective"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上一题" />
+
+        <Button
+            android:id="@+id/tvSubjectIndex"
+            style="@style/answerSubjective"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnNext"
+            style="@style/answerSubjective"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一题" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llAnswerSubjective"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/answerViewHeight"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <me.panavtec.drawableview.DrawableView
+                android:id="@+id/fingerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white" />
+
+            <EditText
+                android:id="@+id/etSubjectiveText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:gravity="top"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ivSubjectiveCover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/gray_cbd0cf" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginBottom="5dp">
+
+            <LinearLayout
+                android:id="@+id/llPaintTools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/btnPaintEmpty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableTop="@drawable/ic_paint_empty"
+                    android:padding="5dp"
+                    android:text="清空"
+                    android:textColor="#00478f" />
+
+
+                <TextView
+                    android:id="@+id/btnPaintUndo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableTop="@drawable/ic_paint_undo"
+                    android:drawablePadding="4dp"
+                    android:padding="5dp"
+                    android:text="撤销"
+                    android:textColor="#00478f" />
+
+                <TextView
+                    android:id="@+id/btnPaintRedo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableTop="@drawable/ic_paint_redo"
+                    android:drawablePadding="4dp"
+                    android:padding="5dp"
+                    android:text="恢复"
+                    android:textColor="#00478f" />
+
+                <TextView
+                    android:id="@+id/btnPaintErase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableTop="@drawable/ic_paint_eraser"
+                    android:padding="5dp"
+                    android:text="橡皮"
+                    android:textColor="#00478f" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="20dp">
+
+                <Button
+                    android:id="@+id/btnSubjectiveCommit"
+                    style="@style/greenwhiteBtnStyle"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/shape_submit"
+                    android:padding="4dp"
+                    android:text="保存" />
+
+                <Button
+                    android:id="@+id/btnSubjectiveBack"
+                    style="@style/greenwhiteBtnStyle"
+                    android:background="@drawable/shape_submit"
+                    android:padding="4dp"
+                    android:text="返回" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

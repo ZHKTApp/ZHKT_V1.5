@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:alpha="0.94"
+    android:background="#29C1AC"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/x45">
+
+    <LinearLayout
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/y40"
+            android:text="身份验证"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="账号："
+                android:textColor="#FFF"
+                android:textSize="19sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:letterSpacing="0.02"
+                android:maxLines="1"
+                android:minWidth="400dp"
+                android:paddingBottom="@dimen/x16"
+                android:paddingLeft="@dimen/x10"
+                android:singleLine="true"
+                android:textColor="#FFF"
+                android:textCursorDrawable="@drawable/editview_cursor_white"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="手机号："
+                android:textColor="#FFF"
+                android:textSize="19sp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#FFF"
+                android:hint="请输入已登记的手机号"
+                android:letterSpacing="0.02"
+                android:maxLines="1"
+                android:minWidth="400dp"
+                android:maxLength="11"
+                android:inputType="phone"
+                android:paddingBottom="@dimen/x16"
+                android:paddingLeft="@dimen/x10"
+                android:singleLine="true"
+                android:textColor="#FFF"
+                android:textColorHint="#99FFFFFF"
+                android:textCursorDrawable="@drawable/editview_cursor_white"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="验证码："
+                android:textColor="#FFF"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#FFF"
+                android:inputType="number"
+                android:letterSpacing="0.4"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:maxWidth="235dp"
+                android:minWidth="235dp"
+                android:paddingBottom="@dimen/x16"
+                android:paddingLeft="@dimen/x10"
+                android:singleLine="true"
+                android:textColor="#FFF"
+                android:textCursorDrawable="@drawable/editview_cursor_white"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/tvGetVarCode"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/x2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:letterSpacing="0.07"
+                android:minWidth="140dp"
+                android:text="获取验证码"
+                android:textColor="@color/colorAccent"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSure"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x40"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/shape_button_white"
+            android:letterSpacing="0.3"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="确定"
+            android:textColor="#28B8A7"
+            android:textSize="@dimen/x19" />
+    </LinearLayout>
+</LinearLayout>

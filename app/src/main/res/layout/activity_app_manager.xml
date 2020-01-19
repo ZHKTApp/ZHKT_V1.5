@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="?attr/selectableItemBackground"
+            android:padding="20dp"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="应用管理"
+            android:textColor="#FFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/x12"
+        android:paddingTop="@dimen/x16">
+
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/pagerTabStrip"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="@dimen/x200"
+            android:layout_marginRight="@dimen/x200"
+            android:background="@drawable/selector_tab_app_manager"
+            app:xTabIndicatorColor="#FFF"
+            app:xTabIndicatorHeight="2dp"
+            app:xTabIndicatorWidth="@dimen/x100"
+            android:letterSpacing="0.04"
+            app:xTabMode="fixed"
+            app:xTabSelectedTextColor="#FFF"
+            app:xTabSelectedTextSize="22sp"
+            app:xTabTextColor="#1B8072"
+            app:xTabTextSize="22sp" />
+        <!--<android.support.design.widget.TabLayout-->
+        <!--android:id="@+id/pagerTabStrip"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_marginLeft="@dimen/x160"-->
+        <!--android:layout_marginRight="@dimen/x160"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--app:elevation="0dp"-->
+        <!--app:tabBackground="@drawable/selector_tab_app_manager"-->
+        <!--app:tabGravity="center"-->
+        <!--app:tabIndicatorColor="#FFF"-->
+        <!--app:tabIndicatorHeight="2dp"-->
+        <!--app:tabMaxWidth="200dp"-->
+        <!--app:tabMode="scrollable"-->
+        <!--app:tabSelectedTextColor="@android:color/white"-->
+        <!--app:tabTextAppearance="@style/TabLayoutTextStyle"-->
+        <!--app:tabTextColor="#1B8072" />-->
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

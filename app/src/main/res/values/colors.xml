@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#29C1AC</color>
+    <color name="colorPrimaryDark">#29C1AC</color>
+    <color name="colorAccent">#29C1AC</color>
+    <color name="examSelectColor">#6fcd4f</color>
+    <color name="borderColor">#eeeeee</color>
+
+    <color name="black_overlay">#29C1AC</color>
+
+
+    <color name="buttons_view_bk">@android:color/darker_gray</color>
+    <color name="content_bk">@android:color/background_light</color>
+
+    <color name="tab_background_selected">#29C1AC</color>
+    <color name="tab_background_unselected">#29a894</color>
+
+    <color name="item_line_color">#888888</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTxtBlack">#333333</color>
+    <color name="colorTxtRed">#AF2A2A</color>
+    <color name="gray_cbd0cf">#cbd0cf</color>
+</resources>

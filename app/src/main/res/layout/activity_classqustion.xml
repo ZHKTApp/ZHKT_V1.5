@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SmartEDU智慧课堂系统" />
+
+
+        <TextView
+            android:id="@+id/tvExamTitleStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="等待开始考试…… "
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tvStudentInfo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="姓名：安全   学号：003" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frameAnswerArea1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llBottom"
+            android:layout_marginBottom="139dp"
+            android:background="#EEE"
+            android:visibility="visible">
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/pvSubject"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <!--<me.panavtec.drawableview.DrawableView-->
+            <!--android:id="@+id/ivSubject"-->
+            <!--android:scaleType="fitStart"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+
+            <!--<me.panavtec.drawableview.DrawableView-->
+            <!--android:id="@+id/fingerView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:visibility="gone" />-->
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llBottom1"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_alignParentBottom="true"
+            android:background="#FFF"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray_cbd0cf" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="选择题"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/llOptions1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/cbxAnswerA1"
+                            style="@style/optionsStyle"
+                            android:text="A" />
+
+                        <CheckBox
+                            android:id="@+id/cbxAnswerB1"
+                            style="@style/optionsStyle"
+                            android:text="B" />
+
+                        <CheckBox
+                            android:id="@+id/cbxAnswerC1"
+                            style="@style/optionsStyle"
+                            android:text="C" />
+
+                        <CheckBox
+                            android:id="@+id/cbxAnswerD1"
+                            style="@style/optionsStyle"
+                            android:text="D" />
+
+                        <CheckBox
+                            android:id="@+id/cbxAnswerE1"
+                            style="@style/optionsStyle"
+                            android:text="E" />
+
+                        <CheckBox
+                            android:id="@+id/cbxAnswerF1"
+                            style="@style/optionsStyle"
+                            android:text="F" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#EEEEEE" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="判断题"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:id="@+id/rdgRightOrWrong1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/cbxRight1"
+                            style="@style/optionsStyle"
+                            android:text="√" />
+
+                        <CheckBox
+                            android:id="@+id/cbxWrong1"
+                            style="@style/optionsStyle"
+                            android:text="X" />
+                    </LinearLayout>
+
+                    <!--<RadioGroup-->
+                    <!--android:id="@+id/rdgRightOrWrong"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<RadioButton-->
+                    <!--android:id="@+id/cbxRight"-->
+                    <!--style="@style/optionsStyle"-->
+                    <!--android:text="√" />-->
+
+                    <!--<RadioButton-->
+                    <!--android:id="@+id/cbxWrong"-->
+                    <!--style="@style/optionsStyle"-->
+                    <!--android:text="X" />-->
+
+
+                    <!--</RadioGroup>-->
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#EEEEEE" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="主观题"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnQuizSubjectiveAnswer1"
+                            style="@style/greenBtnStyle"
+                            android:text="答题" />
+
+                        <Button
+                            android:id="@+id/btnQuizSubjectiveDraw1"
+                            style="@style/greenBtnStyle"
+                            android:layout_marginLeft="20dp"
+                            android:text="手绘" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/btnCheck1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|left"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/shape_submit"
+                        android:text="查看作答"
+                        android:textColor="#FFF"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/ivCheck1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center|left"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#FFF"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnSubmit1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|right"
+                        android:layout_marginRight="55dp"
+                        android:background="@drawable/shape_submit"
+                        android:text="提交"
+                        android:textColor="#FFF" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llHandDrawOperation1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:background="#FFF"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray_cbd0cf" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnPaintColorWhite1"
+                    style="@style/paintButtonStyle"
+                    android:background="@drawable/shape_paint_white" />
+
+                <Button
+                    android:id="@+id/btnPaintColorBlack1"
+                    style="@style/paintButtonStyle"
+                    android:background="@drawable/shape_paint_black" />
+
+                <Button
+                    android:id="@+id/btnPaintColorGreen1"
+                    style="@style/paintButtonStyle"
+                    android:background="@drawable/shape_paint_green" />
+
+                <Button
+                    android:id="@+id/btnPaintColorRed1"
+                    style="@style/paintButtonStyle"
+                    android:background="@drawable/shape_paint_red" />
+
+                <Button
+                    android:id="@+id/btnPaintColorYellow1"
+                    style="@style/paintButtonStyle"
+                    android:background="@drawable/shape_paint_yellow" />
+
+                <Button
+                    android:id="@+id/btnPaintColorBlue1"
+                    style="@style/paintButtonStyle"
+                    android:background="@drawable/shape_paint_blue" />
+
+                <TextView
+                    android:id="@+id/btnPaintErase1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:drawableTop="@drawable/ic_paint_eraser"
+                    android:padding="10dp"
+                    android:text="橡皮"
+                    android:textColor="#00478f" />
+
+                <TextView
+                    android:id="@+id/btnPaintUndo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawablePadding="4dp"
+                    android:drawableTop="@drawable/ic_paint_undo"
+                    android:padding="10dp"
+                    android:text="撤销"
+                    android:textColor="#00478f" />
+
+                <TextView
+                    android:id="@+id/btnPaintRedo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawablePadding="4dp"
+                    android:drawableTop="@drawable/ic_paint_redo"
+                    android:padding="10dp"
+                    android:text="恢复"
+                    android:textColor="#00478f" />
+
+                <TextView
+                    android:id="@+id/btnPaintEmpty1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableTop="@drawable/ic_paint_empty"
+                    android:padding="10dp"
+                    android:text="清空"
+                    android:textColor="#00478f" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+
+                <Button
+                    android:id="@+id/btnHandPaintSubmit1"
+                    style="@style/greenBtnStyle"
+                    android:text="提交" />
+
+                <Button
+                    android:id="@+id/btnHandPaintCancel1"
+                    style="@style/greenBtnStyle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="返回" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/subjectiveContainer1"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_alignParentBottom="true" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

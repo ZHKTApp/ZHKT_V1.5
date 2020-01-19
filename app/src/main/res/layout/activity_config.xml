@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="660dp"
+    android:layout_height="wrap_content"
+    android:alpha="0.94"
+    android:background="#29C1AC"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/x40"
+    android:paddingLeft="@dimen/x65"
+    android:paddingRight="@dimen/x65"
+    android:paddingTop="@dimen/x60"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x42"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x115"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="系统管理"
+            android:textColor="#FFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/tvClearCache"
+            android:layout_width="@dimen/x115"
+            android:layout_height="@dimen/x28"
+            android:background="#FFF"
+            android:gravity="center"
+            android:letterSpacing="0.02"
+            android:text="清理垃圾文件"
+            android:textColor="#2DBCA8"
+            android:textSize="@dimen/x13" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:text="移动网络："
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:minWidth="400dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OFF"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/x16" />
+
+            <Switch
+                android:id="@+id/swhNetwork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x10"
+                android:layout_marginRight="@dimen/x10"
+                android:thumb="@drawable/switch_custom_thumb_selector"
+                android:track="@drawable/switch_custom_track_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ON"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/x16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x15"
+                android:text="（产生的流量费用将由运营商收取）"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/x14" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:text="服务器IP地址："
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edtIpAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="#FFF"
+            android:letterSpacing="0.02"
+            android:maxLines="1"
+            android:minWidth="400dp"
+            android:paddingBottom="@dimen/x16"
+            android:paddingLeft="@dimen/x10"
+            android:singleLine="true"
+            android:textColor="#FFF"
+            android:textCursorDrawable="@drawable/editview_cursor_white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:text="用户名："
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="#FFF"
+            android:letterSpacing="0.02"
+            android:maxLines="1"
+            android:minWidth="400dp"
+            android:paddingBottom="@dimen/x16"
+            android:paddingLeft="@dimen/x10"
+            android:singleLine="true"
+            android:textColor="#FFF"
+            android:textCursorDrawable="@drawable/editview_cursor_white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="密码："
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edtPassWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#FFF"
+                android:inputType="textPassword"
+                android:letterSpacing="0.02"
+                android:maxLines="1"
+                android:minWidth="400dp"
+                android:paddingBottom="@dimen/x16"
+                android:paddingLeft="@dimen/x10"
+                android:singleLine="true"
+                android:textColor="#FFF"
+                android:textCursorDrawable="@drawable/editview_cursor_white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvChangePwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|top"
+                android:layout_marginRight="@dimen/x5"
+                android:layout_marginTop="@dimen/x5"
+                android:background="@drawable/shape_button_white"
+                android:letterSpacing="0.04"
+                android:paddingBottom="6dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="6dp"
+                android:text="修改密码"
+                android:textColor="#28B8A7"
+                android:textSize="@dimen/x13" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llForgetPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_marginTop="@dimen/x3"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.03"
+                android:paddingTop="6dp"
+                android:text="忘记密码"
+                android:textColor="#FFF"
+                android:textSize="@dimen/x13" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/x2"
+                android:alpha="0.7"
+                android:background="#FFF" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="授权码："
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edtPowerCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#FFF"
+                android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+                android:inputType="textVisiblePassword"
+                android:letterSpacing="0.02"
+                android:maxLength="19"
+                android:maxLines="1"
+                android:minWidth="400dp"
+                android:paddingBottom="@dimen/x16"
+                android:paddingLeft="@dimen/x10"
+                android:singleLine="true"
+                android:textColor="#FFF"
+                android:textCursorDrawable="@drawable/editview_cursor_white"
+                android:textSize="18sp"
+                android:enabled="false"/>
+
+            <TextView
+                android:id="@+id/btnAddLicense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|top"
+                android:layout_marginRight="@dimen/x5"
+                android:layout_marginTop="@dimen/x5"
+                android:background="@drawable/shape_button_white"
+                android:letterSpacing="0.04"
+                android:paddingBottom="6dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="6dp"
+                android:text="添加授权"
+                android:textColor="#28B8A7"
+                android:textSize="@dimen/x13" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvQrConfig"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/x45"
+            android:layout_gravity="top"
+            android:layout_marginLeft="@dimen/x20"
+            android:drawableLeft="@drawable/icon_system_qr"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_button_white"
+            android:letterSpacing="0.3"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="保存"
+            android:textColor="#28B8A7"
+            android:textSize="@dimen/x19" />
+
+        <View
+            android:layout_width="@dimen/x70"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnCancels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_button_white"
+            android:letterSpacing="0.3"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="取消"
+            android:textColor="#28B8A7"
+            android:textSize="@dimen/x19" />
+    </LinearLayout>
+</LinearLayout>

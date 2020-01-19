@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/x500"
+        android:layout_height="@dimen/y180"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请联网后再使用。"
+            android:textColor="@color/colorTxtBlack"
+            android:textSize="@dimen/x20" />
+
+        <TextView
+            android:id="@+id/alert_tv_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x16"
+            android:gravity="center"
+            android:text="5（s）后自动关闭..."
+            android:textColor="@color/item_line_color"
+            android:textSize="@dimen/x18" />
+
+    </LinearLayout>
+
+</LinearLayout>

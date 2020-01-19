@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/btnAllUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/x22"
+        android:layout_marginBottom="@dimen/x25"
+        android:background="@drawable/series_green_circle_shap"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:paddingLeft="@dimen/x15"
+        android:paddingTop="@dimen/x5"
+        android:paddingRight="@dimen/x15"
+        android:paddingBottom="@dimen/x5"
+        android:text="全部更新"
+        android:textColor="#FFF"
+        android:textSize="17sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:id="@+id/ivAppIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="52dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvAppSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvAppVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#333"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnAppClean"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/series_green_circle_shap"
+            android:gravity="center"
+            android:letterSpacing="0.06"
+            android:paddingLeft="@dimen/x15"
+            android:paddingRight="@dimen/x15"
+            android:text="清除缓存"
+            android:textColor="#FFF"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/btnUnInstall"
+            android:layout_width="80dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/series_green_circle_shap"
+            android:gravity="center"
+            android:letterSpacing="0.4"
+            android:text="卸载"
+            android:textColor="#FFF"
+            android:textSize="17sp" />
+
+        <RelativeLayout
+            android:id="@+id/rlProgress"
+            android:layout_width="80dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="25dp"
+            android:gravity="center">
+
+            <com.bright.course.utils.CircleProgressBar
+                android:id="@+id/cirProgress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:progress="0"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/btnUpgrade"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:letterSpacing="0.4"
+                android:text="更新"
+                android:textColor="#FFF"
+                android:textSize="17sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="123dp"
+        android:background="#CCCCCC" />
+
+</LinearLayout>

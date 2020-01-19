@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">智慧课堂</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="loading">页面加载中，请稍后..</string>
+    <string name="str_reset_pwd">重置密码</string>
+    <string name="str_reget_code">重新获取</string>
+    <string name="str_input_right_pwd">请输入正确的手机号</string>
+</resources>

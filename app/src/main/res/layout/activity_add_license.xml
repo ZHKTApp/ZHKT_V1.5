@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:alpha="0.94"
+    android:background="#29C1AC"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp"
+    android:paddingTop="10dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:text="添加授权"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/x19" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="授权码："
+            android:textColor="#FFF"
+            android:textSize="@dimen/x18" />
+
+        <EditText
+            android:id="@+id/etLicense"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorWhite"
+            android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+            android:inputType="textVisiblePassword"
+            android:letterSpacing="0.02"
+            android:maxLength="19"
+            android:maxLines="1"
+            android:minWidth="400dp"
+            android:singleLine="true"
+            android:textColor="@color/colorWhite"
+            android:textCursorDrawable="@drawable/editview_cursor_white"
+            android:textSize="@dimen/x18" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnScanQrCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:drawableLeft="@drawable/icon_qr"
+        android:drawablePadding="@dimen/x10"
+        android:text="扫描二维码"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/x18" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_button_white"
+            android:letterSpacing="0.3"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="取消"
+            android:textColor="#28B8A7"
+            android:textSize="@dimen/x19" />
+
+        <View
+            android:layout_width="@dimen/x70"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_button_white"
+            android:letterSpacing="0.3"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:text="注册"
+            android:textColor="#28B8A7"
+            android:textSize="@dimen/x19" />
+    </LinearLayout>
+</LinearLayout>

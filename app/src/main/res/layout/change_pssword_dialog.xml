@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:alpha="0.9"
+    android:background="#29C1AC"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/x50">
+
+    <LinearLayout
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/y45"
+            android:layout_marginBottom="50dp"
+            android:text="修改密码"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:id="@+id/llOldPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="原密码："
+                android:textColor="#FFF"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/edtOldPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#FFF"
+                android:inputType="textPassword"
+                android:letterSpacing="0.02"
+                android:maxLines="1"
+                android:minWidth="400dp"
+                android:paddingBottom="@dimen/x16"
+                android:paddingLeft="@dimen/x10"
+                android:singleLine="true"
+                android:textColor="#FFF"
+                android:textCursorDrawable="@drawable/editview_cursor_white"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="新密码："
+                android:textColor="#FFF"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/edtNewPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#FFF"
+                android:inputType="textPassword"
+                android:letterSpacing="0.02"
+                android:maxLines="1"
+                android:minWidth="400dp"
+                android:paddingBottom="@dimen/x16"
+                android:paddingLeft="@dimen/x10"
+                android:singleLine="true"
+                android:textColor="#FFF"
+                android:textCursorDrawable="@drawable/editview_cursor_white"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="确认密码："
+                android:textColor="#FFF"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/edtSurePwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#FFF"
+                android:inputType="textPassword"
+                android:letterSpacing="0.02"
+                android:maxLines="1"
+                android:minWidth="400dp"
+                android:paddingBottom="@dimen/x16"
+                android:paddingLeft="@dimen/x10"
+                android:singleLine="true"
+                android:textColor="#FFF"
+                android:textCursorDrawable="@drawable/editview_cursor_white"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="60dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancelSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_button_white"
+                android:letterSpacing="0.3"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:text="取消"
+                android:textColor="#28B8A7"
+                android:textSize="@dimen/x19" />
+
+            <View
+                android:layout_width="@dimen/x70"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_button_white"
+                android:letterSpacing="0.3"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:text="保存"
+                android:textColor="#28B8A7"
+                android:textSize="@dimen/x19" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

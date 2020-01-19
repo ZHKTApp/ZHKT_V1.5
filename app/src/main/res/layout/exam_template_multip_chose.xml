@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <include layout="@layout/part_exam_card_position" />
+
+    <LinearLayout
+        android:id="@+id/llMultipleChose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbxChoseA"
+            style="@style/answerSingleItem"
+            android:text="A" />
+
+        <CheckBox
+            android:id="@+id/cbxChoseB"
+            style="@style/answerSingleItem"
+            android:text="B" />
+
+        <CheckBox
+            android:id="@+id/cbxChoseC"
+            style="@style/answerSingleItem"
+            android:text="C" />
+
+        <CheckBox
+            android:id="@+id/cbxChoseD"
+            style="@style/answerSingleItem"
+            android:text="D" />
+        <CheckBox
+            android:id="@+id/cbxChoseE"
+            style="@style/answerSingleItem"
+            android:text="E" />
+        <CheckBox
+            android:id="@+id/cbxChoseF"
+            style="@style/answerSingleItem"
+            android:text="F" />
+    </LinearLayout>
+
+</LinearLayout>

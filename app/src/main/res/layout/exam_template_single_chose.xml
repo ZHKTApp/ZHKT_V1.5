@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <include layout="@layout/part_exam_card_position" />
+
+    <RadioGroup
+        android:id="@+id/rdgSingleChose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdbSingleChoseA"
+            style="@style/answerSingleItem"
+            android:text="A" />
+
+        <RadioButton
+            android:id="@+id/rdbSingleChoseB"
+            style="@style/answerSingleItem"
+            android:text="B" />
+
+        <RadioButton
+            android:id="@+id/rdbSingleChoseC"
+            style="@style/answerSingleItem"
+            android:text="C" />
+
+        <RadioButton
+            android:id="@+id/rdbSingleChoseD"
+            style="@style/answerSingleItem"
+            android:text="D" />
+        <RadioButton
+            android:id="@+id/rdbSingleChoseE"
+            style="@style/answerSingleItem"
+            android:text="E" />
+        <RadioButton
+            android:id="@+id/rdbSingleChoseF"
+            style="@style/answerSingleItem"
+            android:text="F" />
+    </RadioGroup>
+
+</LinearLayout>

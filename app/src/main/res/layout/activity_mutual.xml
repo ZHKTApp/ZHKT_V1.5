@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="SmartEDU智慧课堂系统" />
+
+
+        <TextView
+            android:id="@+id/tvTitleStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="学生互评答案" />
+
+        <TextView
+            android:id="@+id/tvStuInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="20dp"
+            android:text="姓名：安全   学号：003" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/item_line_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rlContext"
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+            <TextView
+                android:id="@+id/tvQuestionDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="简答题 第1题   满分: 20分" />
+
+            <TextView
+                android:id="@+id/tvScore"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="130dp"
+                android:gravity="center"
+                android:text="得分 : " />
+
+            <EditText
+                android:id="@+id/etMutual"
+                android:layout_width="50dp"
+                android:layout_height="34dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="71dp"
+                android:background="@drawable/editview_frame_gray"
+                android:digits="0123456789"
+                android:gravity="center"
+                android:lines="1"
+                android:maxLength="3" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/rlContext"
+            android:background="@color/item_line_color" />
+
+        <LinearLayout
+            android:id="@+id/llDrawable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/flPaintTools"
+            android:layout_below="@+id/line"
+            android:orientation="horizontal">
+
+            <com.screen.AdvancedDoodleView
+                android:id="@+id/advRightAnswer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/item_line_color" />
+
+            <FrameLayout
+                android:id="@+id/flStuAnswer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></FrameLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/item_line_color" />
+            <!--<com.screen.DoodleView-->
+            <!--android:id="@+id/dvScreen"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="match_parent" />-->
+            <!--<com.screen.BoardView-->
+            <!--android:id="@+id/bvMutual"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1" -->
+            <!--/>-->
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/llDrawable"
+            android:background="@color/item_line_color" />
+
+        <FrameLayout
+            android:id="@+id/flPaintTools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:id="@+id/llPaintTools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/btnPaint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableTop="@drawable/ic_paint_empty"
+                    android:padding="10dp"
+                    android:text="画笔"
+                    android:textColor="#00478f" />
+
+
+                <TextView
+                    android:id="@+id/btnUpSubject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableTop="@drawable/ic_paint_undo"
+                    android:drawablePadding="4dp"
+                    android:padding="10dp"
+                    android:text="上一题"
+                    android:textColor="#00478f" />
+
+                <TextView
+                    android:id="@+id/btnNextSubject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableTop="@drawable/ic_paint_redo"
+                    android:drawablePadding="4dp"
+                    android:padding="10dp"
+                    android:text="下一题"
+                    android:textColor="#00478f" />
+
+                <TextView
+                    android:id="@+id/btnErase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawableTop="@drawable/ic_paint_eraser"
+                    android:padding="10dp"
+                    android:text="橡皮"
+                    android:textColor="#00478f" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="20dp">
+
+                <Button
+                    android:id="@+id/btnCommit"
+                    style="@style/greenBtnStyle"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/shape_submit"
+                    android:padding="4dp"
+                    android:text="提交" />
+
+                <!--<Button-->
+                    <!--android:id="@+id/btnGetSubject"-->
+                    <!--style="@style/greenBtnStyle"-->
+                    <!--android:background="@drawable/shape_submit"-->
+                    <!--android:padding="4dp"-->
+                    <!--android:text="加载" />-->
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

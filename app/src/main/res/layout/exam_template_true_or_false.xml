@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <include layout="@layout/part_exam_card_position" />
+
+    <RadioGroup
+        android:id="@+id/rdgTrueOrFalse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdbTrue"
+            style="@style/answerSingleItem"
+            android:text="√" />
+
+        <RadioButton
+            android:id="@+id/rdbFalse"
+            style="@style/answerSingleItem"
+            android:text="X" />
+
+    </RadioGroup>
+
+</LinearLayout>
