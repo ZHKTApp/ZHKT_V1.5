@@ -33,6 +33,8 @@ import kotlinx.android.synthetic.main.activity_config.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import org.jetbrains.anko.getStackTraceString
+import retrofit2.Call
 
 
 /**
@@ -46,34 +48,43 @@ class SystemConfigDialog : BaseDialogFragment(), View.OnClickListener {
     var studentName by SPUtil(Constant.STU_NO, "")
     var bitAnswer: BitAnswer?=null
     var loginCode by SPUtil(Constant.AUTHORIZATION_CODE,"")
+    var service_ip:String by SPUtil(Constant.SERVICE_IP,"")
 
     //修改
-    private fun login() {
+    private fun login(url:String) {
 //        bitAnswer = BitAnswer(activity)
 //        bitAnswer?.login(null, edtPowerCode.text.toString(), BitAnswer.LoginMode.AUTO)
 //        val endDate = bitAnswer?.getSessionInfo(BitAnswer.SessionType.BIT_END_DATE)
 //        val endResult = bitAnswer?.getRequestInfo(edtPowerCode.text.toString(),BitAnswer.BindingType.EXISTING);
 //        customMsgToastShort(App.instance, "保存成功。"+" 验证码到期时间 :" + endDate + "查询结果"+endResult)
 
-        val call = RelevanceRetrofitHelper.create().relevanceLogin(edtUserName.text.toString(), edtPassWord.text.toString())
+        val call = RelevanceRetrofitHelper.create(url).relevanceLogin(edtUserName.text.toString(), edtPassWord.text.toString())
         call.enqueue(object : APICallback<ResponseRelevanceLogin>() {
             override fun onSuccess(response: ResponseRelevanceLogin?) {
                 Log.e(TAG, "token : " + response?.resultInfo?.token + " studentName : " + response?.resultInfo?.studentName)
                 if (response != null) {
                     if (TextUtils.isEmpty(response?.resultInfo?.token)) {
                         ToastGlobal.showToast(response.resultMsg)
+                        service_ip=""
                     } else {
                         var relevanceToken by SPUtil(Constant.REL_TOKEN, response.resultInfo.token)
                         relevanceToken = response?.resultInfo.token
                         var relevanceStuId by SPUtil(Constant.REL_STUID, response.resultInfo.cmStudentId)
                         relevanceStuId = response?.resultInfo.cmStudentId
                         studentName = response?.resultInfo.studentName
-                        Log.e(TAG, "token systemconfig : $relevanceStuId")
+                        service_ip=url
+                        Log.e(TAG, "token systemconfig : $relevanceStuId service_ip : $service_ip")
+                        customMsgToastShort(App.instance, "保存成功。")
                         dismiss()
                     }
                 }
             }
 
+            override fun onFailure(call: Call<ResponseRelevanceLogin>, t: Throwable?) {
+                super.onFailure(call, t)
+                Log.e("tag","error : ${t?.getStackTraceString()}")
+                service_ip=""
+            }
             override fun onFinish(msg: String) {
                 mDialog.dismiss()
             }
@@ -95,6 +106,8 @@ class SystemConfigDialog : BaseDialogFragment(), View.OnClickListener {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         EventBus.getDefault().register(this);
+        dialog.setCancelable(false)
+        dialog.setCanceledOnTouchOutside(false)
         getEdtContent()
         initListener()
     }
@@ -165,8 +178,7 @@ class SystemConfigDialog : BaseDialogFragment(), View.OnClickListener {
         Log.e("tag","CODE ： "+  edtPowerCode.text.toString().trim())
         if (loginMsg.equals("执行成功")){
             loginCode = loginMsg!!
-            login()
-            customMsgToastShort(App.instance, "保存成功。")
+            login(ip)
         }else{
             Log.e("TAG","loginMsg : "+loginMsg)
             ToastGlobal.showToast(loginMsg)

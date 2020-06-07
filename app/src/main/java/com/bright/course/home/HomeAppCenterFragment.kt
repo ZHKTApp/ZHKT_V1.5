@@ -78,18 +78,22 @@ class HomeAppCenterFragment : BaseFragment() {
 
     private fun luanch(packageName: String, className: String) {
         var token: String  by SPUtil(Constant.REL_STUID, "")
-        var service_ip:String by SPUtil(Constant.SYSTEM_SERVER_IP_KEY,"")
-        Log.e(TAG, "token bright : $token service ip : $service_ip" )
-        if (TextUtils.isEmpty(token)) {
-            ToastGlobal.showToast("请先点击系统管理 保存用户名密码")
+        var service_ip: String by SPUtil(Constant.SERVICE_IP, "")
+        Log.e(TAG, "token bright : $token service ip : $service_ip")
+        if (TextUtils.isEmpty(service_ip)) {
+            ToastGlobal.showToast("请输入有效服务器地址")
         } else {
-            var intent = Intent()
-            intent.setClassName(packageName, className)
-            var mBundle = Bundle()
-            mBundle.putString("token", token)
-            mBundle.putString("service_ip",service_ip)
-            intent.putExtras(mBundle)
-            startActivity(intent)
+            if (TextUtils.isEmpty(token)) {
+                ToastGlobal.showToast("请先点击系统管理 保存用户名密码")
+            } else {
+                var intent = Intent()
+                intent.setClassName(packageName, className)
+                var mBundle = Bundle()
+                mBundle.putString("token", token)
+                mBundle.putString("service_ip", service_ip)
+                intent.putExtras(mBundle)
+                startActivity(intent)
+            }
         }
     }
 

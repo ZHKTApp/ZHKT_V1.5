@@ -14,11 +14,11 @@ import java.util.concurrent.TimeUnit
 object RelevanceRetrofitHelper {
     private var retrofit: Retrofit? = null
 
-    fun create(): ApiService {
-        return getRetrofit()!!.create(ApiService::class.java)
+    fun create(url:String): ApiService {
+        return getRetrofit(url)!!.create(ApiService::class.java)
     }
 
-    private fun getRetrofit(): Retrofit? {
+    private fun getRetrofit(url:String): Retrofit? {
         val client = OkHttpClient.Builder()
                 .connectTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
@@ -27,7 +27,8 @@ object RelevanceRetrofitHelper {
                 .hostnameVerifier { hostname, session -> true }
                 .build()
         retrofit = Retrofit.Builder()
-                .baseUrl(Constant.REL_BASE_URL)  // baseUrl
+//                .baseUrl(Constant.REL_BASE_URL)  // baseUrl
+                .baseUrl("http://$url/ys-manager/app/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

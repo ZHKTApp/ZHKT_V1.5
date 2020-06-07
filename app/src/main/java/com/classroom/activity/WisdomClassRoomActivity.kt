@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.os.PowerManager
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import com.bright.course.App
@@ -38,7 +39,11 @@ import java.io.FileOutputStream
 import java.net.URL
 
 class WisdomClassRoomActivity : BaseEventBusActivity(), View.OnClickListener, LoginContract.View, LoginOutContract.View {
-
+    var name by SPUtil(Constant.SYSTEM_USER_NAME_KEY, "")
+    var pwd by SPUtil(Constant.SYSTEM_PASS_WORD_KEY, "")
+    var teacherIp by SPUtil(Constant.TEACHER_IP_KEY, "")
+    var teacherPort by SPUtil(Constant.TEACHER_PORT_KEY, "")
+    var isFirst:Boolean = true
     companion object {
         fun launch(context: Context) {
             context.startActivity(context.intentFor<WisdomClassRoomActivity>())
@@ -77,8 +82,11 @@ class WisdomClassRoomActivity : BaseEventBusActivity(), View.OnClickListener, Lo
      * 设置本地保存数据
      */
     private fun getEdtContent() {
-        var name by SPUtil(Constant.STUDENT_ACCOUNT_KEY, "")
-        var pwd by SPUtil(Constant.STUDENT_PASSWORD_KEY, "")
+        //修改
+//        var name by SPUtil(Constant.STUDENT_ACCOUNT_KEY, "")
+//        var pwd by SPUtil(Constant.STUDENT_PASSWORD_KEY, "")
+//        var name by SPUtil(Constant.SYSTEM_USER_NAME_KEY, "")
+//        var pwd by SPUtil(Constant.SYSTEM_PASS_WORD_KEY, "")
         //取本地(sp)教师端-ip数据
         val strTeacherIp: String by SPUtil(Constant.TEACHER_IP_KEY, "")
         //取本地(sp)教师端-端口数据
@@ -92,6 +100,10 @@ class WisdomClassRoomActivity : BaseEventBusActivity(), View.OnClickListener, Lo
         edtTeacherPort?.setText(strTeacherPort)
         edtTeacherIp?.setSelection(edtTeacherIp.text.toString()?.length)
         edtTeacherPort?.setSelection(edtTeacherPort.text.toString()?.length)
+        if (isFirst){
+            selfMotionLogin()
+            isFirst=false
+        }
     }
 
     override fun onResume() {
@@ -211,10 +223,8 @@ class WisdomClassRoomActivity : BaseEventBusActivity(), View.OnClickListener, Lo
      * 保存输入框数据
      */
     private fun setEdtContent() {
-        var name by SPUtil(Constant.TEACHER_IP_KEY, edtTeacherIp.text.toString())
-        var pwd by SPUtil(Constant.TEACHER_PORT_KEY, edtTeacherPort.text.toString())
-        name = edtTeacherIp.text.toString()
-        pwd = edtTeacherPort.text.toString()
+        teacherIp = edtTeacherIp.text.toString()
+        teacherPort = edtTeacherPort.text.toString()
         EventBus.getDefault().post(EventMessage(BCMessage.MSG_CONNECT, ""))
         setVisible()
         //关闭配置弹框
@@ -256,7 +266,15 @@ class WisdomClassRoomActivity : BaseEventBusActivity(), View.OnClickListener, Lo
         return valid
 
     }
-
+    fun selfMotionLogin(){
+        //登录账号密码 教师IP不为空自动登录
+        if (!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(pwd)&&!TextUtils.isEmpty(teacherIp)){
+            UserInfoInstance.instance.updateUserInfo(null)
+            login()
+            //修改
+            file.deleteRecursively()
+        }
+    }
     fun downloadFile(url: String) {
         showLoadingDialog("正在下载文件请稍等")
         val fileName = url.substring(url.lastIndexOf("/") + 1, url.length)

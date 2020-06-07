@@ -59,7 +59,7 @@ class AddLicenseDialog : DialogFragment() {
         }
 
         btnCancel.setOnClickListener {
-            var code = etLicense.text.toString().trim()
+            code = etLicense.text.toString().trim()
             if (TextUtils.isEmpty(code)){
                 ToastGlobal.customMsgToastShort(App.instance, "授权码无效，请输入授权码。")
             }else{
@@ -77,10 +77,10 @@ class AddLicenseDialog : DialogFragment() {
         btnRegister.setOnClickListener {
             //修改
             bitAnswer = BitAnswer(activity)
-            var code = etLicense.text.toString().trim()
+            code = etLicense.text.toString().trim()
             Log.e("tag","code : "+ code)
             if (!TextUtils.isEmpty(code)){
-            var loginMsg =  bitAnswer?.ysLogin(null, code, BitAnswer.LoginMode.AUTO)
+                var loginMsg =  bitAnswer?.ysLogin(null, code, BitAnswer.LoginMode.AUTO)
                 if (loginMsg.equals("执行成功")){
                     EventBus.getDefault().post(EventMessage(BCMessage.MSG_SCANQRCODE, code))
                     loginCode = loginMsg!!

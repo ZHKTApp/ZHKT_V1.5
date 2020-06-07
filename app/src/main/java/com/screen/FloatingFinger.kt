@@ -180,21 +180,21 @@ class FloatingFinger : Service(), HandSupContract.View {
     fun onMessageEvent(event: EventMessage) {
         val msgJson = Gson().fromJson(event.msg, MQTTMessageJSON::class.java)
         when (msgJson.data.status) {
-        //开启网络
+            //开启网络
             "ConnectToExternalNetwork" -> {
                 ToastGlobal.showToast("开启网络")
                 browserButton.visibility = View.VISIBLE
             }
-        //关闭网络
+            //关闭网络
             "UnconnectToExternalNetwork" -> {
                 ToastGlobal.showToast("关闭网络")
                 browserButton.visibility = View.GONE
             }
-        //开始抢答
+            //开始抢答
             "StartScrambleForAnswer" -> {
                 answerButton.visibility = View.VISIBLE
             }
-        //开启学生演示的时候关闭抢答
+            //开启学生演示的时候关闭抢答
             "PadCast" -> {
                 answerButton.visibility = View.GONE
             }

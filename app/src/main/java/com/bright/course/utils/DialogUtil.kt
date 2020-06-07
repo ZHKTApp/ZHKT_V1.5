@@ -68,6 +68,9 @@ class DialogUtil {
             val waitDialog = ProgressDialog(context)
             if (!TextUtils.isEmpty(message)) {
                 waitDialog.setMessage(message)
+                //修改点击不可消散
+                waitDialog.setCanceledOnTouchOutside(false)
+                waitDialog.setCancelable(false)
             }
             return waitDialog
         }

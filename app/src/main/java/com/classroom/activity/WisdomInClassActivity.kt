@@ -14,8 +14,11 @@ import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder
 import com.bright.course.App
 import com.bright.course.BaseEventBusActivity
 import com.bright.course.R
+import com.bright.course.bean.BCMessage
+import com.bright.course.bean.EventMessage
 import com.bright.course.http.UserInfoInstance
 import com.bright.course.mqtt.MQTTBaseActivity
+import com.bright.course.mqtt.MQTTHelper
 import com.bright.course.mqtt.MQTTMessageJSON
 import com.bright.course.utils.DialogUtil
 import com.bright.course.utils.NetWorkUtil
@@ -32,6 +35,9 @@ import com.rztop.classroom.presenter.HandSupPresenter
 import com.screen.FloatingFinger
 import kotlinx.android.synthetic.main.activity_classroom_inclass.*
 import org.eclipse.paho.client.mqttv3.MqttMessage
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 import org.jetbrains.anko.intentFor
 import java.util.*
 
@@ -194,6 +200,7 @@ class WisdomInClassActivity : MQTTBaseActivity(), LoginOutContract.View,HandSupC
         if (msgJson.data.status.equals("PCLogout")) {
             logout()
         }
+//        MQTTHelper.processMessage(topic, message.toString(), this)
     }
 
     override fun loginOutSuccess(data: String) {
@@ -234,11 +241,22 @@ class WisdomInClassActivity : MQTTBaseActivity(), LoginOutContract.View,HandSupC
 
     override fun onDestroy() {
         super.onDestroy()
+        EventBus.getDefault().unregister(this)
+
         var intent = Intent(this, FloatingFinger::class.java)
         intent.putExtra("isShow", false)
         startService(intent)
         stopService(Intent(this, FloatingFinger::class.java))
         timer.cancel()
         timerTask.cancel()
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onMsgEvent(event: EventMessage) {
+        when (event.msgType) {
+            BCMessage.MSG_RECEIVED -> {
+                MQTTHelper.processMessage(event.msgType, event.msg, this)
+            }
+        }
     }
 }
