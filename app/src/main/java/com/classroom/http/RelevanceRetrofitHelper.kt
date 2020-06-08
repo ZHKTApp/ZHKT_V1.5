@@ -27,7 +27,6 @@ object RelevanceRetrofitHelper {
                 .hostnameVerifier { hostname, session -> true }
                 .build()
         retrofit = Retrofit.Builder()
-//                .baseUrl(Constant.REL_BASE_URL)  // baseUrl
                 .baseUrl("http://$url/ys-manager/app/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())

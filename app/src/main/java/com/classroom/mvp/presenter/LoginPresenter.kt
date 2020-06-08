@@ -28,6 +28,7 @@ class LoginPresenter : BasePresenter<LoginContract.View>(), LoginContract.Presen
                         } else {
                             loginSuccess(results.data)
                         }
+
                         hideLoading()
                     }
                 }, { t ->

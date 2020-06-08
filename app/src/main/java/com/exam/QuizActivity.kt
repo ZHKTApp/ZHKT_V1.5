@@ -479,7 +479,6 @@ class QuizActivity : BaseEventBusActivity(), View.OnClickListener, CompoundButto
     public fun postAnswerFromSubjectiveView(filePath: String) {
         longPictureList.clear()
         longPictureList.add(filePath)
-//        Utils.updateOptions(RequestOptions(), filePath, System.currentTimeMillis(), ivCheck, this@QuizActivity)
         Glide.with(App.Companion.instance.getApplicationContext()).load(filePath).into(ivCheck)
         postAnswer(ANSWER_TYPE_TRUR_SUBJECTIVE, filePath)
     }

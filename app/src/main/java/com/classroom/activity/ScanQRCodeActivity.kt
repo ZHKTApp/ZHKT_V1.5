@@ -94,25 +94,6 @@ class ScanQRCodeActivity : AppCompatActivity(), QRCodeView.Delegate {
             code=result
             EventBus.getDefault().post(EventMessage(BCMessage.MSG_SCANQRCODE, result))
         }
-//        message?ipaddress=192.168.0.1&port=8090&wifiname=qts-office&wifipassword=12345678
-//        val newStr = result.substring(result.indexOf("?"), result.length)
-//
-//        val newArray = arrayOfNulls<String>(4)
-//        val split = newStr.split("&".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-//        for (i in split.indices) {
-//            val split1 = split[i].split("=".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-//            for (j in split1.indices) {
-//                if (j + 1 >= split1.size) {
-//                    continue
-//                }
-//                newArray[i] = split1[j + 1]
-//                Log.i("TAG", "initView: key   " + i + "<>" + j + split1[j + 1])
-//            }
-//        }
-//        Log.i("TAG", "initView: key   " + newArray[0] + "," + newArray[1])
-//        setSpContent(result, newArray[0], newArray[1])
-//        ToastGlobal.customMsgToastShort(App.instance, "更新成功！")
-//        EventBus.getDefault().post(EventMessage(BCMessage.MSG_CONNECT, ""))
         finish()
     }
 

@@ -227,17 +227,6 @@ class WisdomInClassActivity : MQTTBaseActivity(), LoginOutContract.View,HandSupC
             isShow = false
         }
     }
-//    override fun onPause() {
-//        super.onPause()
-//        startService()
-//        isShow = true
-//
-//    }
-//    override fun onResume() {
-//        super.onResume()
-//        startService()
-//        isShow = false
-//    }
 
     override fun onDestroy() {
         super.onDestroy()

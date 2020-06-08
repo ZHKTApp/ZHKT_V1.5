@@ -177,11 +177,6 @@ abstract class MQTTBaseActivity : BaseActivity() {
                 }
             })
 
-            // THIS DOES NOT WORK!
-//            mqttClient.subscribe(subscriptionTopic, 0, IMqttMessageListener { topic, message ->
-//                // message Arrived!
-//                println("Message: " + topic + " : " + String(message.payload))
-//            })
 
         } catch (ex: MqttException) {
             System.err.println("Exception whilst subscribing")

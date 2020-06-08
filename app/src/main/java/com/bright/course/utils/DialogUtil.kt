@@ -30,6 +30,7 @@ class DialogUtil {
             dialog?.setCanceledOnTouchOutside(false)
             dialog?.show()
             //计时
+
             setTimer(context, tvCancel)
         }
 

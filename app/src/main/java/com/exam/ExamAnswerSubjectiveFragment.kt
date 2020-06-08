@@ -475,7 +475,6 @@ class ExamAnswerSubjectiveFragment : BaseFragment(), View.OnClickListener {
             (activity as ExamMainActivity).hideSubjectiveView()
         } else if (activity is QuizActivity) {
             (activity as QuizActivity).hideSubjectiveView(fragment)
-//            filePath?.let { (activity as QuizActivity).postAnswerFromSubjectiveView(it) }
         }
     }
 

@@ -126,15 +126,6 @@ class HomeAppCenterFragment : BaseFragment() {
                 e.printStackTrace()
             }
             // Continue only if the File was successfully created
-//            if (photoFile != null) {
-//                val photoURI = context?.let {
-//                    FileProvider.getUriForFile(it,
-//                            "com.bright.course.fileprovider",
-//                            photoFile)
-//                }
-//                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-//                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO)
-//            }
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile))
             takePictureIntent.putExtra(MediaStore.Images.Media.ORIENTATION, 0);
             startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO)

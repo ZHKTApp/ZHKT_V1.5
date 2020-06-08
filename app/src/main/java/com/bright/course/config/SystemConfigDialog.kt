@@ -52,12 +52,6 @@ class SystemConfigDialog : BaseDialogFragment(), View.OnClickListener {
 
     //修改
     private fun login(url:String) {
-//        bitAnswer = BitAnswer(activity)
-//        bitAnswer?.login(null, edtPowerCode.text.toString(), BitAnswer.LoginMode.AUTO)
-//        val endDate = bitAnswer?.getSessionInfo(BitAnswer.SessionType.BIT_END_DATE)
-//        val endResult = bitAnswer?.getRequestInfo(edtPowerCode.text.toString(),BitAnswer.BindingType.EXISTING);
-//        customMsgToastShort(App.instance, "保存成功。"+" 验证码到期时间 :" + endDate + "查询结果"+endResult)
-
         val call = RelevanceRetrofitHelper.create(url).relevanceLogin(edtUserName.text.toString(), edtPassWord.text.toString())
         call.enqueue(object : APICallback<ResponseRelevanceLogin>() {
             override fun onSuccess(response: ResponseRelevanceLogin?) {

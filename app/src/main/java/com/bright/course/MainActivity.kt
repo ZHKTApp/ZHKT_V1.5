@@ -198,58 +198,6 @@ class MainActivity : BaseActivity(), LoginOutContract.View, SystemConfigDialog.o
         AppManagerActivity.launch(this)
     }
 
-//    override fun onMessageArrived(topic: String?, message: MqttMessage?) {
-////        ToastGlobal.showToast("onMessageArrived:$topic")
-//        Log.d("onMessageArrived", "msg:" + message.toString())
-////        tvMQTT.text = "${tvMQTT.text}\nonMessageArrived:${message.toString()}"
-//
-//        MQTTHelper.processMessage(topic, message.toString(), this@MainActivity)
-//
-//    }
-//
-//    override fun onConnectionLost() {
-//        Log.d("MQTT", "onConnectionLost")
-////        tvMQTT.text = "${tvMQTT.text}\nonConnectionLost"
-////        ToastGlobal.showToast("连接 MQTT LOST：5秒后重试")
-////        doAsync {
-////            Thread.sleep(5000)
-////            runOnUiThread {
-////                connectToServer()
-////            }
-////        }
-//    }
-//
-//    override fun onConnectionSuccess() {
-//        Log.d("MQTT", "onConnectionSuccess")
-////        ToastGlobal.showToast("onConnectionSuccess")
-////        tvMQTT.text = "${tvMQTT.text}\nonConnectionSuccess"
-//
-////        UserInfoInstance.instance.observe(this, Observer<ResponseLogin> {
-////            if (!UserInfoInstance.instance.isGuestUser) {
-////                subscribeToTopic(UserInfoInstance.instance.userInfo.profile.ID)
-////            }
-////        });
-//    }
-//
-//    override fun onConnectionFailure() {
-//        Log.d("MQTT", "onConnectionFailure")
-////        ToastGlobal.showToast("onConnectionFailure")
-////        tvMQTT.text = "${tvMQTT.text}\nonConnectionFailure"
-//
-////        ToastGlobal.showToast("连接MQTT失败：5秒后重试")
-////        doAsync {
-////            Thread.sleep(5000)
-////            runOnUiThread {
-////                connectToServer()
-////            }
-////        }
-//    }
-//
-//
-//    override fun onDeliveryComplete() {
-////        ToastGlobal.showToast("onDeliveryComplete")
-////        tvMQTT.text = "${tvMQTT.text}\nonDeliveryComplete"
-//    }
 
     fun turnOffScreen() {
         val policyManager = getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager

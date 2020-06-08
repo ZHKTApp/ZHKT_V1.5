@@ -226,18 +226,7 @@ class MQTTHelper {
                     }
 //                    turnOffScreen(activity)
                 }
-//                //开启网络
-//                "ConnectToExternalNetwork" -> {
-//                    WebActivity.launch(activity)
-//                    ToastGlobal.showToast("开启网络")
-//                }
-//                //关闭网络
-//                "UnconnectToExternalNetwork" -> {
-//                    ToastGlobal.showToast("关闭网络")
-//                    if (activity is WebActivity) {
-//                        activity.finish()
-//                    }
-//                }
+
                 //开启学生演示
                 "PadCast" -> {
                     val ids = msgJson.data.ids

@@ -789,12 +789,6 @@ class ExamMainActivity : BaseEventBusActivity(), View.OnClickListener {
                 disableViews(currentView)
             } else {
                 currentView.isEnabled = false
-//                if (currentView == btnSubmitExam) {
-//                    currentView.isEnabled = false
-//                }
-//                else {
-//                    currentView.isEnabled = true
-//                }
             }
         }
     }

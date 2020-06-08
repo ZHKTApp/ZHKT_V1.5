@@ -283,11 +283,6 @@ class WisdomClassRoomActivity : BaseEventBusActivity(), View.OnClickListener, Lo
             var file: File? = null
             try {
                 val inputStream = BufferedInputStream(URL(url).openStream(), StreamUtils.IO_BUFFER_SIZE)
-//                val downloadPath = File(Environment.getExternalStorageDirectory(), "bc_downloads")
-//                if (!downloadPath.exists()) downloadPath.mkdirs()
-
-//                val inputStream = BufferedInputStream(URL("http://foooooot.com/media/upload/selected_route/%E6%A1%83%E8%8A%B1%E5%B2%9B.jpg").openStream(), IO_BUFFER_SIZE)
-//                file = File(downloadPath, fileName)
                 file = FileUtils.getFilePath(Constant.PACKAGE_NAME, fileName)
                 val outputStream = FileOutputStream(file, false)
                 val out = BufferedOutputStream(outputStream, StreamUtils.IO_BUFFER_SIZE)
