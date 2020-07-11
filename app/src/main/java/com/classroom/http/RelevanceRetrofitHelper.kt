@@ -1,11 +1,8 @@
 package com.classroom.http
 
-import com.bright.course.BuildConfig
 import com.classroom.api.ApiService
-import com.classroom.constant.Constant
 import com.classroom.constant.HttpConstant
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,12 +11,13 @@ import java.util.concurrent.TimeUnit
 object RelevanceRetrofitHelper {
     private var retrofit: Retrofit? = null
 
-    fun create(url:String): ApiService {
+    fun create(url: String): ApiService {
         return getRetrofit(url)!!.create(ApiService::class.java)
     }
 
-    private fun getRetrofit(url:String): Retrofit? {
-        val client = OkHttpClient.Builder()
+
+    private fun getRetrofit(url: String): Retrofit? {
+        val client = OkHttpClient().newBuilder()
                 .connectTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
@@ -34,6 +32,5 @@ object RelevanceRetrofitHelper {
                 .build()
         return retrofit
     }
-
-
 }
+

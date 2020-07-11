@@ -100,10 +100,10 @@ class WisdomClassRoomActivity : BaseEventBusActivity(), View.OnClickListener, Lo
         edtTeacherPort?.setText(strTeacherPort)
         edtTeacherIp?.setSelection(edtTeacherIp.text.toString()?.length)
         edtTeacherPort?.setSelection(edtTeacherPort.text.toString()?.length)
-        if (isFirst){
-            selfMotionLogin()
-            isFirst=false
-        }
+//        if (isFirst){
+//            selfMotionLogin()
+//            isFirst=false
+//        }
     }
 
     override fun onResume() {
